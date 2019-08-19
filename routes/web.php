@@ -10,11 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Route Web Page
 Route::get('/', function () {
-    return view('index');
+    return view('frontend.index');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route For Backend
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+    Route::resource('kategori', 'Kategori_Controller');
+    Route::resource('tag', 'Tag_Controller');
+    Route::resource('artikel', 'Artikel_Controller');
+});
