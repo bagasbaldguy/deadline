@@ -11,25 +11,29 @@
 |
 */
 //Route Web Page
-Route::get('/', function () {
-    return view('frontend.index');
-});
+// Route::get('/', function () {
+//     return view('layouts.frontend.frontend');
+// });
 
-Route::get('catalog', function () {
-    return view('frontend.catalog');
-});
+// Route::get('catalog', function () {
+//     return view('frontend.catalog');
+// });
 
-Route::get('details', function () {
-    return view('frontend.details');
-});
-
-Route::get('about', function () {
-    return view('frontend.about');
-});
+// Route::get('details/{artikel}', 'FrontendController@singleblog');
 
 // Route::get('about', function () {
 //     return view('frontend.about');
 // });
+
+// Route::get('about', function () {
+//     return view('frontend.about');
+// });
+
+//Route Frontend
+Route::get('/', 'FrontendController@index');
+Route::get('katalog', 'FrontendController@katalog');
+Route::get('about', 'FrontendController@tentang');
+Route::get('katalog/{artikel}', 'FrontendController@singlekatalog');
 
 
 Auth::routes();

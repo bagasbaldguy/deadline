@@ -35,6 +35,10 @@
                             <textarea id="editor1" rows="8" cols="30" type="text" name="konten">{{ $artikel->konten }}</textarea>
                         </div>
                         <div class="form-group">
+                            <label for="">Links</label>
+                            <input class="form-control" value="{{ $artikel->link }}" type="text" name="link">
+                        </div>
+                        <div class="form-group">
                             <label for="">Foto</label><br>
                             <img src="{{ asset('assets/img/artikel/'.$artikel->foto) }}" alt="" height="250px" width="250px">
                             <input type="file" class="form-control" name="foto">

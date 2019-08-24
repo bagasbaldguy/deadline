@@ -18,12 +18,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Api Json
-Route::group(
-    ['as' => 'api.', 'middleware' => ['cors']],
-    function () {
-        // Json
-        Route::resource('artikel', 'Api\ArtikelController');
-        Route::resource('tag', 'Api\TagController');
-        Route::resource('kategori', 'Api\KategoriController');
-    }
-);
+// Route::group(
+//     ['as' => 'api.', 'middleware' => ['cors']],
+//     function () {
+//         // Json
+//         Route::resource('artikel', 'Api\ArtikelController');
+//         Route::resource('tag', 'Api\TagController');
+//         Route::resource('kategori', 'Api\KategoriController');
+//         Route::resource('frontend', 'Api\FrontendController');
+//     }
+// );
+
+Route::group(['as'=> 'api.'],function(){
+    Route::get('ulasanberita', 'FrontendAPIController@ulasanberita');
+    Route::get('katalog','FrontendAPIController@ulasanberita');
+    // Route::get('berita-kategori/{kategori}','FrontendAPIController@beritakategori');
+});

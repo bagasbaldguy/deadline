@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artikel extends Model
 {
     protected $fillable = [
-        'judul', 'slug', 'foto',
+        'judul', 'slug','link','foto',
         'konten', 'id_user', 'id_kategori'
     ];
     public $timestamps = true;
@@ -25,7 +25,6 @@ class Artikel extends Model
     {
         return $this->belongsToMany('App\Tag', 'artikel_tag', 'id_artikel', 'id_tag');
     }
-
     public function getRouteKeyName()
     {
         return 'slug';

@@ -59,6 +59,7 @@ class Artikel_Controller extends Controller
         $artikel->konten = $request->konten;
         $artikel->id_user = Auth::user()->id;
         $artikel->id_kategori = $request->kategori;
+        $artikel->link = $request->link;
 
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
@@ -129,6 +130,8 @@ class Artikel_Controller extends Controller
         $artikel->konten = $request->konten;
         $artikel->id_user = Auth::user()->id;
         $artikel->id_kategori = $request->id_kategori;
+        $artikel->link = $request->link;
+
 
         // foto
         if ($request->hasFile('foto')) {

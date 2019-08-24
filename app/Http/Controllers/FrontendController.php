@@ -10,141 +10,24 @@ use App\User;
 
 class FrontendController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     public function index()
     {
-
+        $slidebar = Artikel::with('kategori')->orderBy('created_at','desc')->get();      
+        return view ('frontend.index',compact('slidebar'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function katalog(Artikel $artikel)
     {
-        //
+        return view ('frontend.catalog');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function singlekatalog(Artikel $artikel){
+        $artikel = Artikel::with('kategori', 'tag', 'user')->where('slug', '=',$artikel->slug)->first();
+        return view('frontend.details',compact('artikel'));
+    }
+
+    public function tentang()
     {
-        //
+        return view ('frontend.about');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        // $artikel = Artikel::where('slug', $id)->first();
-
-        // if (!$artikel) {
-        //     $response = [
-        //         'success' => false,
-        //         'data' => 'Empty',
-        //         'message' => 'artikel tidak ditemukan.'
-        //     ];
-        //     return response()->json($response, 404);
-        // }
-
-        // $response = [
-        //     'success' => true,
-        //     'data' =>  $artikel,
-        //     'message' => 'Berhasil.'
-        // ];
-
-        // return response()->json($response, 200);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function singlepost(Artikel $artikel)
-    {
-
-        return view('frontend.singlepost');
-    }
-
-    public function singletest(){
-
-        return view('frontend.singlepost');
-    }
-
-    public function post(){
-        $artikel = Artikel::orderBy('created_at','desc')->paginate(8);
-        return view('frontend.post',compact('artikel'));
-    }
-
-     // post TAG
-    //  public function posttag(Tag $tag)
-    //  {
-    //      $kategori = Kategori::all();
-    //      $artikel = $tag->artikel()->latest()->paginate(8);
-    //      $popular = Artikel::inRandomOrder()->take(5)->get();
-    //      $tag = Tag::all();
-
-    //      return view('frontend.post',compact('artikel'));
-    //  }
-
-     // post KATEGORI
-     public function postkategori(Kategori $kategori)
-     {
-
-         $artikel = $kategori->artikel()->latest()->paginate(8);
-         $popular = Artikel::inRandomOrder()->take(5)->get();
-         $tag = Tag::all();
-
-         return view('frontend.post',compact('artikel'));
-     }
-
-     public function kategori()
-     {
-         return view('frontend.kategori');
-     }
-
 }

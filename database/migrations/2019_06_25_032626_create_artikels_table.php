@@ -19,6 +19,7 @@ class CreateArtikelsTable extends Migration
             $table->string('slug');
             $table->text('konten');
             $table->string('foto');
+            $table->string('link');
             $table->unsignedBigInteger('id_kategori');
             $table->foreign('id_kategori')->references('id')->on('kategoris')->onDelete('cascade');
             $table->unsignedBigInteger('id_user');

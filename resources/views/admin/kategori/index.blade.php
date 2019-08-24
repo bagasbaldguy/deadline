@@ -1,19 +1,14 @@
 @extends('adminbackend')
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
+<link rel="stylesheet" href="{{asset('assets/backend/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.css')}}">
+
 @endsection
 
 @section('js')
-    <script src="{{ asset('js/select2.min.js')}}"></script>
-    <script src="{{ asset('backend/assets/js/components/select2-init.js')}}"></script>
-    <script src="{{ asset('backend/assets/vendor/ckeditor/ckeditor.js')}}"></script>
-<script>
-    CKEDITOR.replace('editorl');
-
-    $(document).ready(function () {
-        $('#select2').select2();
-    })
-</script>
+<script src="{{asset('assets/backend/assets/vendor/datatables.net/js/jquery.dataTables.js')}}"></script>
+<script src="{{asset('assets/backend/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<script src="{{asset('assets/backend/assets/js/components/datatables-init.js')}}"></script>
 @endsection
 
 @section('content')

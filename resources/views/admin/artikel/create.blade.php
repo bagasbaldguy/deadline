@@ -35,6 +35,10 @@
                             <textarea id="editor1" rows="8" cols="30" type="text" name="konten"></textarea>
                         </div>
                         <div class="form-group">
+                            <label for="">Link</label>
+                            <input class="form-control" type="text" name="link">
+                        </div>
+                        <div class="form-group">
                             <label for="">Foto</label>
                             <input type="file" class="form-control" name="foto">
                         </div>

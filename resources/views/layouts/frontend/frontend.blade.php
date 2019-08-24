@@ -62,60 +62,137 @@
 									<a href="{{ url('about')}}" class="header__nav-link">About</a>
 								</li>
 							</ul>
-							<!-- end header nav -->		
+							<!-- end header nav -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- header search -->
+		<form action="#" class="header__search">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="header__search-content">
+							<input type="text" placeholder="Search for a movie, TV Series that you are looking for">
+
+							<button type="button">search</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<!-- end header search -->
 	</header>
 	<!-- end header -->
 
-	<!-- page title -->
-	<section class="section section--first section--bg" data-bg="{{ asset('assets/frontend/img/section/section.jpg')}}">
+	<!-- home -->
+	<section class="home">
+		<!-- home bg -->
+		<div class="owl-carousel home__bg">
+			<div class="item home__cover" data-bg="{{ asset('assets/frontend/img/home/home__bg.jpg')}}"></div>
+			<div class="item home__cover" data-bg="{{ asset('assets/frontend/img/home/home__bg2.jpg')}}"></div>
+			<div class="item home__cover" data-bg="{{ asset('assets/frontend/img/home/home__bg3.jpg')}}"></div>
+			<div class="item home__cover" data-bg="{{ asset('assets/frontend/img/home/home__bg4.jpg')}}"></div>
+		</div>
+		<!-- end home bg -->
+
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<div class="section__wrap">
-						<!-- section title -->
-						<h2 class="section__title">Tentang Kami</h2>
-						<!-- end section title -->
+					<h1 class="home__title"><b>APA SAJA YANG BARU</b></h1>
 
-						<!-- breadcrumb -->
-						<ul class="breadcrumb">
-							<li class="breadcrumb__item"><a href="{{ url('/')}}">Home</a></li>
-							<li class="breadcrumb__item breadcrumb__item--active">Tentang</li>
-						</ul>
-						<!-- end breadcrumb -->
+					<button class="home__nav home__nav--prev" type="button">
+						<i class="icon ion-ios-arrow-round-back"></i>
+					</button>
+					<button class="home__nav home__nav--next" type="button">
+						<i class="icon ion-ios-arrow-round-forward"></i>
+					</button>
+				</div>
+
+				<div class="col-12">
+					<div class="owl-carousel home__carousel">
+						<div class="item">
+							<!-- card -->
+							<div class="card card--big">
+								<div class="card__cover">
+									<img src="{{ asset('assets/frontend/img/covers/cover.jpg')}}" alt="">
+								</div>
+								<div class="card__content">
+									<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
+									<span class="card__category">
+										<a href="#">Action</a>
+										<a href="#">Triler</a>
+									</span>
+									<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
+								</div>
+							</div>
+							<!-- end card -->
+						</div>
+
+						<div class="item">
+							<!-- card -->
+							<div class="card card--big">
+								<div class="card__cover">
+									<img src="{{ asset('assets/frontend/img/covers/cover2.jpg')}}" alt="">
+								</div>
+								<div class="card__content">
+									<h3 class="card__title"><a href="#">Benched</a></h3>
+									<span class="card__category">
+										<a href="#">Comedy</a>
+									</span>
+									<span class="card__rate"><i class="icon ion-ios-star"></i>7.1</span>
+								</div>
+							</div>
+							<!-- end card -->
+						</div>
+
+						<div class="item">
+							<!-- card -->
+							<div class="card card--big">
+								<div class="card__cover">
+									<img src="{{ asset('assets/frontend/img/covers/cover3.jpg')}}" alt="">
+								</div>
+								<div class="card__content">
+									<h3 class="card__title"><a href="#">Whitney</a></h3>
+									<span class="card__category">
+										<a href="#">Romance</a>
+										<a href="#">Drama</a>
+									</span>
+									<span class="card__rate"><i class="icon ion-ios-star"></i>6.3</span>
+								</div>
+							</div>
+							<!-- end card -->
+						</div>
+
+						<div class="item">
+							<!-- card -->
+							<div class="card card--big">
+								<div class="card__cover">
+									<img src="{{ asset('assets/frontend/img/covers/cover4.jpg')}}" alt="">
+								</div>
+								<div class="card__content">
+									<h3 class="card__title"><a href="#">Blindspotting</a></h3>
+									<span class="card__category">
+										<a href="#">Comedy</a>
+										<a href="#">Drama</a>
+									</span>
+									<span class="card__rate"><i class="icon ion-ios-star"></i>7.9</span>
+								</div>
+							</div>
+							<!-- end card -->
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- end page title -->
+	<!-- end home -->
 
-	<!-- about -->
-	<section class="section">
-		<div class="container">
-			<div class="row">
-				<!-- section title -->
-				<div class="col-12">
-					<h2 class="section__title"><b>MrMovie</b> – Cari Informasi Seputar Dunia Perfilman</h2>
-				</div>
-				<!-- end section title -->
-
-				<!-- section text -->
-				<div class="col-12">
-					<p class="section__text">Film adalah media komunikasi yang bersifat audio visual untuk menyampaikan suatu pesan kepada sekelompok orang yang berkumpul di suatu tempat tertentu. (Effendy, 1986: 134). Pesan film pada komunikasi massa dapat berbentuk apa saja tergantung dari misi film tersebut. Akan tetapi, umumnya sebuah film dapat mencakup berbagai pesan, baik itu pesan pendidikan, hiburan dan informasi. Pesan dalam film adalah menggunakan mekanisme lambang – lambang yang ada pada pikiran manusia berupa isi pesan, suara, perkataan, percakapan dan sebagainya.
-						Film juga dianggap sebagai media komunikasi yang ampuh terhadap massa yang menjadi sasarannya, karena sifatnya yang audio visual, yaitu gambar dan suara yang hidup. Dengan gambar dan suara, film mampu bercerita banyak dalam waktu singkat. Ketika menonton film penonton seakan-akan dapat menembus ruang dan waktu yang dapat menceritakan kehidupan dan bahkan dapat mempengaruhi audiens.
-					</p>
-				</div>
-				<!-- end section text -->
-				
-			</div>
-		</div>
-	</section>
-	<!-- end about -->
+	<!-- content -->
+	@yield('content')
+	<!-- end content -->
 
 	<!-- footer -->
 	<footer class="footer">
@@ -165,6 +242,7 @@
 	<script src="{{ asset('assets/frontend/js/photoswipe.min.js')}}"></script>
 	<script src="{{ asset('assets/frontend/js/photoswipe-ui-default.min.js')}}"></script>
 	<script src="{{ asset('assets/frontend/js/main.js')}}"></script>
+	<script src="{{ asset('/js/index.js')}}"></script>
 </body>
 
 </html>
