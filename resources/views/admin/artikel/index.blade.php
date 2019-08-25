@@ -42,7 +42,7 @@
                                 <td>{{$data->kategori->nama_kategori}}</td>
                                 <td>{{$data->user->name}}</td>
                                 <td>{{$data->link}}</td>
-                                <td><img src="{{asset('assets/img/artikel/' .$data->foto. '')}}"
+                                <td><img style="width:50px;height:50px" src="{{asset('assets/img/artikel/' .$data->foto. '')}}"
                                     style="width:250px; height:250px;" alt="Foto"></td>
 
 								<td style="text-align: center;">

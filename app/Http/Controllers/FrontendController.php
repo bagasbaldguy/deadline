@@ -12,8 +12,9 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        $slidebar = Artikel::with('kategori')->orderBy('created_at','desc')->get();      
-        return view ('frontend.index',compact('slidebar'));
+        $slidebar = Artikel::orderBy('created_at', 'desc')->get();
+        $paginate = Artikel::orderBy('created_at', 'desc')->paginate(4);
+        return view ('frontend.index',compact('slidebar','paginate'));
     }
 
     public function katalog(Artikel $artikel)

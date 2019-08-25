@@ -90,7 +90,7 @@
 	<!-- details -->
 	<section class="section details">
 		<!-- details background -->
-		<div class="details__bg" data-bg="{{ asset('assets/frontend/img/home/home__bg.jpg')}}"></div>
+		<div class="details__bg" data-bg="{{ asset('assets/img/artikel/'.$artikel->foto)}}"></div>
 		<!-- end details background -->
 
 		<!-- details content -->
@@ -128,10 +128,9 @@
 									</div>
 
 									<ul class="card__meta">
-										<li><span>Genre:</span> <a href="#">{{ $artikel->kategori->nama_kategori }}</a>
+										<li><span>Genre:</span> <a>{{ $artikel->kategori->nama_kategori }}</a>
 										<li><span>Release year:</span> 2017</li>
 										<li><span>Running time:</span> 120 min</li>
-										<li><span>Country:</span> <a href="#">USA</a> </li>
 									</ul>
 
 									<div class="card__description card__description--details">

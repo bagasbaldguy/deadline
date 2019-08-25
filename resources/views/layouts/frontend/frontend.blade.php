@@ -34,7 +34,6 @@
 
 </head>
 <body class="body">
-	
 	<!-- header -->
 	<header class="header">
 		<div class="header__wrap">
@@ -113,76 +112,25 @@
 
 				<div class="col-12">
 					<div class="owl-carousel home__carousel">
+					@foreach($slidebar as $data)
 						<div class="item">
 							<!-- card -->
 							<div class="card card--big">
 								<div class="card__cover">
-									<img src="{{ asset('assets/frontend/img/covers/cover.jpg')}}" alt="">
+									<img src="{{ asset('assets/img/artikel/'.$data->foto)}}" style="height: 400px;" alt="">
 								</div>
 								<div class="card__content">
-									<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
+									<h3 class="card__title"><a href="katalog/{{ $data->slug }}">{{ $data->judul }}</a></h3>
 									<span class="card__category">
-										<a href="#">Action</a>
-										<a href="#">Triler</a>
-									</span>
+										@foreach($data->tag as $item)
+                                    		<a href="#">{{ $item->name }}</a>
+                            			@endforeach
 									<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
 								</div>
 							</div>
 							<!-- end card -->
 						</div>
-
-						<div class="item">
-							<!-- card -->
-							<div class="card card--big">
-								<div class="card__cover">
-									<img src="{{ asset('assets/frontend/img/covers/cover2.jpg')}}" alt="">
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Benched</a></h3>
-									<span class="card__category">
-										<a href="#">Comedy</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>7.1</span>
-								</div>
-							</div>
-							<!-- end card -->
-						</div>
-
-						<div class="item">
-							<!-- card -->
-							<div class="card card--big">
-								<div class="card__cover">
-									<img src="{{ asset('assets/frontend/img/covers/cover3.jpg')}}" alt="">
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Whitney</a></h3>
-									<span class="card__category">
-										<a href="#">Romance</a>
-										<a href="#">Drama</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>6.3</span>
-								</div>
-							</div>
-							<!-- end card -->
-						</div>
-
-						<div class="item">
-							<!-- card -->
-							<div class="card card--big">
-								<div class="card__cover">
-									<img src="{{ asset('assets/frontend/img/covers/cover4.jpg')}}" alt="">
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Blindspotting</a></h3>
-									<span class="card__category">
-										<a href="#">Comedy</a>
-										<a href="#">Drama</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>7.9</span>
-								</div>
-							</div>
-							<!-- end card -->
-						</div>
+					@endforeach
 					</div>
 				</div>
 			</div>

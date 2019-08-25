@@ -21,7 +21,7 @@
 							        <div class="card__content">
 								        <h3 class="card__title"><a href="/katalog/${value.slug}">${value.judul}</a></h3>
 									        <span class="card__category">
-										        <a href="#">${value.kategori.nama_kategori}</a>
+										        <a>${value.kategori.nama_kategori}</a>
 									        </span>
 
 							    <div class="card__wrap">
