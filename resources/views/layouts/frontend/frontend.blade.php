@@ -42,7 +42,7 @@
 					<div class="col-12">
 						<div class="header__content">
 							<!-- header logo -->
-							<a href="index.html" class="header__logo">
+							<a href="{{ url('/')}}" class="header__logo">
 								<img src="{{ asset('assets/frontend/img/logo.svg')}}" alt="">
 							</a>
 							<!-- end header logo -->
