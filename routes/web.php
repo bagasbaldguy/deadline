@@ -29,7 +29,7 @@
 //     return view('frontend.about');
 // });
 
-//Route Frontend
+//Route Frontend Mr.Movie
 Route::get('/', 'FrontendController@index');
 Route::get('katalog', 'FrontendController@katalog');
 Route::get('about', 'FrontendController@tentang');
